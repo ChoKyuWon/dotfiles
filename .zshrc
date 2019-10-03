@@ -25,4 +25,3 @@ fi
 
 #eval "$(starship init zsh)"
 export PATH="$HOME/.cargo/bin:$PATH"
-#here is change!
