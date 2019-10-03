@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+main(){
+    if cd ~/dotfile; then
+        echo "Move to dotfile dir"
+    else
+        echo "No dotfile dir!"
+        mkdir ~/dotfile && cd ~/dotfile
+        git init && git remote add origin git@github.com:ChoKyuWon/dotfiles.git
+        git pull origin master
+        git config --global user.email "yyj10137@gmail.com"
+        git config --global user.name "ChoKyuWon"
+    fi
+    echo "*.bak" > ~/dotfile/.gitignore
+
+    targets=(zshrc vimrc tmux.conf )
+ 
+    for target in ${targets[@]}; do
+           movefile $target
+    done
+    gitupdate
+}
+
+gitupdate(){
+    git add -A
+    git commit -m "autoupdate"
+    git push origin master
+}
+
+movefile() {
+    file=~/dotfile/.$1
+    rm "$file.bak" 2>/dev/null
+    
+    if mv "$file" "$file.bak" 2>/dev/null; then
+        echo "bakup $file.bak"
+        cp ~/.$1 $file
+    else
+        echo "~/.$file"
+        cp  ~/.$1 $file
+    fi
+}
+
+main
