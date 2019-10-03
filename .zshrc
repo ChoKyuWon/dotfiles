@@ -14,6 +14,7 @@ antigen theme agnoster
 #antigen theme robbyrussell
 antigen apply
 
+USER=``
 export EDITOR=vim
 export GPG_TTY=$(tty)
 
