@@ -1,4 +1,4 @@
-source $HOME/zsh/antigen/antigen.zsh
+source $HOME/zsh/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -14,7 +14,6 @@ antigen theme agnoster
 #antigen theme robbyrussell
 antigen apply
 
-
 export EDITOR=vim
 export GPG_TTY=$(tty)
 
@@ -23,6 +22,4 @@ if command -v tmux &> /dev/null && [ -z $TMUX ]; then
     tmux attach -t default || tmux new -s default
 fi
 
-#eval "$(starship init zsh)"
 export PATH="$HOME/.cargo/bin:$PATH"
-#small change!
