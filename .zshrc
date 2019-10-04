@@ -18,9 +18,5 @@ USER=``
 export EDITOR=vim
 export GPG_TTY=$(tty)
 
-if command -v tmux &> /dev/null && [ -z $TMUX ]; then
-    echo "run new tmux!"
-    tmux attach -t default || tmux new -s default
-fi
-
 export PATH="$HOME/.cargo/bin:$PATH"
+alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
