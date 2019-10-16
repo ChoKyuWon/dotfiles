@@ -20,3 +20,7 @@ export GPG_TTY=$(tty)
 
 export PATH="$HOME/.cargo/bin:$PATH"
 alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
+export WIRKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
+source /usr/local/bin/virtualenvwrapper.sh
+
